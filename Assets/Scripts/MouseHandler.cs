@@ -10,6 +10,8 @@ public class MouseHandler : MonoBehaviour {
     private float range;
     [SerializeField]
     private float power;
+    [SerializeField]
+    private GameObject rubBand;
 
         void Start ()
     {
@@ -56,6 +58,7 @@ public class MouseHandler : MonoBehaviour {
             Vector3 offset = pos - slingShot.transform.position;
             pos = slingShot.transform.position + Vector3.ClampMagnitude(offset, range);
             target.position = pos;
+
         }
     }
 
