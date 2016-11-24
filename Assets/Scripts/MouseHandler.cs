@@ -8,6 +8,7 @@ public class MouseHandler : MonoBehaviour {
     private Transform target;
     private GameObject slingShot;
     private GameObject LR_1;
+    private GameObject LR_2;
     [SerializeField]
     private float range;
     [SerializeField]
@@ -15,12 +16,19 @@ public class MouseHandler : MonoBehaviour {
     [SerializeField]
     private GameObject rubBand;
     private LineRenderer lineRenderer;
+    private LineRenderer lineRenderer2;
+    [SerializeField]
+    private GameObject leftSide;
 
         void Start ()
     {
         lineRenderer = GameObject.Find("RubberBand").GetComponent<LineRenderer>();
+        lineRenderer2 = GameObject.Find("RubberBand2").GetComponent<LineRenderer>();
         slingShot = GameObject.Find("SlingShot");
         LR_1 = GameObject.Find("LR_1");
+        LR_2 = GameObject.Find("LR_2");
+        leftSide = GameObject.Find("leftSide");
+        lineRenderer.sortingOrder = 10;
     }
 
     void Update () {
@@ -37,6 +45,7 @@ public class MouseHandler : MonoBehaviour {
                 Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
                 rb.isKinematic = false;
                 rb.AddForce(-dir * power);
+                target = null;
             }
         }
         if (Input.GetMouseButton(0))
@@ -62,9 +71,28 @@ public class MouseHandler : MonoBehaviour {
             Vector3 offset = pos - slingShot.transform.position;
             pos = slingShot.transform.position + Vector3.ClampMagnitude(offset, range);
             target.position = pos;
-            lineRenderer.SetPosition(1,target.transform.position);
+            lineRenderer.SetPosition(1,leftSide.transform.position);
             lineRenderer.SetPosition(0,LR_1.transform.position);
+            lineRenderer2.SetPosition(1, target.transform.position);
+            lineRenderer2.SetPosition(0, LR_2.transform.position);
 
+        }
+        else
+        {
+            if (target)
+            {
+                lineRenderer.SetPosition(1, leftSide.transform.position);
+                lineRenderer.SetPosition(0, LR_1.transform.position);
+                lineRenderer2.SetPosition(1, LR_2.transform.position);
+                lineRenderer2.SetPosition(0, LR_1.transform.position);
+            }
+            else
+            {
+                lineRenderer.SetPosition(1, LR_2.transform.position);
+                lineRenderer.SetPosition(0, LR_1.transform.position);
+                lineRenderer2.SetPosition(1, LR_2.transform.position);
+                lineRenderer2.SetPosition(0, LR_1.transform.position);
+            }
         }
     }
 
