@@ -4,21 +4,25 @@ using System.Collections;
 public class MouseHandler : MonoBehaviour {
 
     private bool hasTarget;
+    [SerializeField]
     private Transform target;
     private GameObject slingShot;
+    private GameObject LR_1;
     [SerializeField]
     private float range;
     [SerializeField]
     private float power;
     [SerializeField]
     private GameObject rubBand;
+    private LineRenderer lineRenderer;
 
         void Start ()
     {
+        lineRenderer = GameObject.Find("RubberBand").GetComponent<LineRenderer>();
         slingShot = GameObject.Find("SlingShot");
-	}
+        LR_1 = GameObject.Find("LR_1");
+    }
 
-    // Update is called once per frame
     void Update () {
         if (Input.GetMouseButtonUp(0))
         {
@@ -58,6 +62,8 @@ public class MouseHandler : MonoBehaviour {
             Vector3 offset = pos - slingShot.transform.position;
             pos = slingShot.transform.position + Vector3.ClampMagnitude(offset, range);
             target.position = pos;
+            lineRenderer.SetPosition(1,target.transform.position);
+            lineRenderer.SetPosition(0,LR_1.transform.position);
 
         }
     }
