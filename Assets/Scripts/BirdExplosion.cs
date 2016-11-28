@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class random : MonoBehaviour {
+public class BirdExplosion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
