@@ -13,11 +13,9 @@ public class MouseHandler : MonoBehaviour {
     private float range;
     [SerializeField]
     private float power;
-    [SerializeField]
     private GameObject rubBand;
     private LineRenderer lineRenderer;
     private LineRenderer lineRenderer2;
-    [SerializeField]
     private GameObject leftSide;
 
         void Start ()
@@ -28,7 +26,8 @@ public class MouseHandler : MonoBehaviour {
         LR_1 = GameObject.Find("LR_1");
         LR_2 = GameObject.Find("LR_2");
         leftSide = GameObject.Find("leftSide");
-        lineRenderer.sortingOrder = 10;
+        lineRenderer.sortingOrder = 4;
+        lineRenderer2.sortingOrder = 4;  
     }
 
     void Update () {
