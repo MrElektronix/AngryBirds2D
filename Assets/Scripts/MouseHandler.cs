@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MouseHandler : MonoBehaviour {
 
+    private SpriteRenderer spriteRenderer;
     private bool hasTarget;
     [SerializeField]
     private Transform target;
@@ -17,8 +18,14 @@ public class MouseHandler : MonoBehaviour {
     private LineRenderer lineRenderer;
     private LineRenderer lineRenderer2;
     private GameObject leftSide;
+    [SerializeField]
+    private Sprite sprite1;
+    [SerializeField]
+    private Sprite sprite2;
+    private float coolDown = 2, coolDownTime;
 
-        void Start ()
+
+    void Start()
     {
         lineRenderer = GameObject.Find("RubberBand").GetComponent<LineRenderer>();
         lineRenderer2 = GameObject.Find("RubberBand2").GetComponent<LineRenderer>();
@@ -27,13 +34,14 @@ public class MouseHandler : MonoBehaviour {
         LR_2 = GameObject.Find("LR_2");
         leftSide = GameObject.Find("leftSide");
         lineRenderer.sortingOrder = 4;
-        lineRenderer2.sortingOrder = 4;  
+        lineRenderer2.sortingOrder = 1;
+        //StartCoroutine(WaitAndPrint());
     }
 
-    void Update () {
+    void Update() {
         if (Input.GetMouseButtonUp(0))
         {
-            if(hasTarget)
+            if (hasTarget)
             {
                 hasTarget = false;
                 Vector3 dir;
@@ -70,10 +78,17 @@ public class MouseHandler : MonoBehaviour {
             Vector3 offset = pos - slingShot.transform.position;
             pos = slingShot.transform.position + Vector3.ClampMagnitude(offset, range);
             target.position = pos;
-            lineRenderer.SetPosition(1,leftSide.transform.position);
-            lineRenderer.SetPosition(0,LR_1.transform.position);
-            lineRenderer2.SetPosition(1, target.transform.position);
+            lineRenderer.SetPosition(1, leftSide.transform.position);
+            lineRenderer.SetPosition(0, LR_1.transform.position);
+            lineRenderer2.SetPosition(1, leftSide.transform.position);
             lineRenderer2.SetPosition(0, LR_2.transform.position);
+            //spriteRenderer.sprite = sprite1;
+           /* if(coolDownTime < Time.time)
+            {
+                coolDown = Time.time + coolDownTime;
+                spriteRenderer.sprite = sprite2;
+                Debug.Log("skuuuurt");
+            }*/
 
         }
         else
@@ -94,6 +109,19 @@ public class MouseHandler : MonoBehaviour {
             }
         }
     }
+
+  /*  private IEnumerator WaitAndPrint()
+    {
+        while (true)
+        {
+            Debug.Log(spriteRenderer);
+            spriteRenderer.sprite = sprite1;
+            
+            yield return new WaitForSeconds(3.0f);
+            spriteRenderer.sprite = sprite2;
+            yield return new WaitForSeconds(0.2f);
+        }
+    }*/
 
     void OnDrawGizmos()
     {
