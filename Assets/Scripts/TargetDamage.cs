@@ -8,14 +8,14 @@ public class TargetDamage : MonoBehaviour {
     public float damageImpactSpeed;
 
     private int currentHitPoints;
-    private float damageImpactSpeedSqr;
+    //private float damageImpactSpeedSqr;
     private SpriteRenderer spriteRenderer;
 
 	// Use this for initialization
 	void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentHitPoints = hitPoints;
-        damageImpactSpeedSqr = damageImpactSpeed * damageImpactSpeed;
+        //damageImpactSpeedSqr = damageImpactSpeed * damageImpactSpeed;
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -28,7 +28,7 @@ public class TargetDamage : MonoBehaviour {
             
         //spriteRenderer.sprite = damagedSprite;
         currentHitPoints -= 2;
-        Debug.Log(currentHitPoints);
+        //Debug.Log("currentHitPoints: " + currentHitPoints);
 
         if (currentHitPoints <= 0)
         {
