@@ -1,13 +1,28 @@
 fileFormatVersion: 2
 guid: 3de1902c69fe3bb49b76fead5e9e5c8a
-timeCreated: 1480493184
+timeCreated: 1480878945
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Smoke_effect_(in_game_size)_0
+    21300002: Smoke_effect_(in_game_size)_1
+    21300004: Smoke_effect_(in_game_size)_2
+    21300006: Smoke_effect_(in_game_size)_3
+    21300008: Smoke_effect_(in_game_size)_4
+    21300010: Smoke_effect_(in_game_size)_5
+    21300012: Smoke_effect_(in_game_size)_6
+    21300014: Smoke_effect_(in_game_size)_7
+    21300016: Smoke_effect_(in_game_size)_8
+    21300018: Smoke_effect_(in_game_size)_9
+    21300020: Smoke_effect_(in_game_size)_10
+    21300022: Smoke_effect_(in_game_size)_11
+    21300024: Smoke_effect_(in_game_size)_12
+    21300026: Smoke_effect_(in_game_size)_13
+    21300028: Smoke_effect_(in_game_size)_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -29,8 +44,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,20 +53,215 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 105
+        width: 93
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 90
+        width: 117
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_2
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 92
+        width: 118
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_3
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 88
+        width: 122
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_4
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 72
+        width: 152
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_5
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 68
+        width: 156
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_6
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 109
+        width: 80
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_7
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 98
+        width: 97
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_8
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 114
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_9
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 79
+        width: 73
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_10
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 71
+        width: 154
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_11
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 136
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_12
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 89
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_13
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 91
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Smoke_effect_(in_game_size)_14
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 77
+        width: 62
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
