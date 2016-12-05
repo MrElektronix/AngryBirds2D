@@ -4,25 +4,41 @@ using System.Collections;
 public class PlayerAnimation : MonoBehaviour {
 
     Vector3 previous;
+    [SerializeField]
     float velocity;
     [SerializeField]
     private SpriteRenderer spriteRenderer;
     [SerializeField]
-    private Sprite sprite1;
-    [SerializeField]
-    private Sprite sprite2;
+    bool Expl = false;
+
+    Animator anim;
+
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+        previous = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+   
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "Damager")
+        {
+            anim.SetTrigger("Explode");
+            Destroy(gameObject, 0.8f);
+        }
+    }
 
     void FixedUpdate()
     {
-        velocity = ((transform.position - previous).magnitude) / Time.deltaTime;
+        velocity = (transform.position - previous).magnitude / Time.deltaTime;
         previous = transform.position;
         if(velocity > 10)
         {
-            spriteRenderer.sprite = sprite2;
-        }
-        else
-        {
-            spriteRenderer.sprite = sprite1;
+            anim.SetTrigger("inAir");
         }
     }
+
 }
