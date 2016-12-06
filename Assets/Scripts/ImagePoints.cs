@@ -27,7 +27,10 @@ public class ImagePoints : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        SetPoint(470);
+        tensImage.enabled = false;
+        hunderdsImage.enabled = false;
+        thousandImage.enabled = false;
+        SetPoint(45);
     }
 
     void SetPoint(int pointAmount)
@@ -38,18 +41,31 @@ public class ImagePoints : MonoBehaviour {
         string newstring = currentPoints.ToString();
 
         int one = (int)char.GetNumericValue(newstring[newstring.Length - 1]);
-        int two = (int)char.GetNumericValue(newstring[newstring.Length - 2]);
-        int three = (int)char.GetNumericValue(newstring[newstring.Length - 3]);
-
         onesImage.sprite = imageNumbers[one];
-        tensImage.sprite = imageNumbers[two];
-        hunderdsImage.sprite = imageNumbers[three];
-        if (currentPoints >= 1000)
+        
+        
+        if (currentPoints >= 10 && currentPoints < 100)
         {
+            tensImage.enabled = true;
+            int two = (int)char.GetNumericValue(newstring[newstring.Length - 2]);
+            tensImage.sprite = imageNumbers[two];
+        }
+
+        if (currentPoints >= 100 && currentPoints < 1000)
+        {
+            hunderdsImage.enabled = true;
+            int three = (int)char.GetNumericValue(newstring[newstring.Length - 3]);
+            hunderdsImage.sprite = imageNumbers[three];
+        }
+        
+        if (currentPoints >= 1000 && currentPoints < 10000)
+        {
+            thousandImage.enabled = true;
             int four = (int)char.GetNumericValue(newstring[newstring.Length - 4]);
             thousandImage.sprite = imageNumbers[four];
         }
     }
+
 
 
 	
