@@ -48,6 +48,6 @@ public class PlayerAnimation : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.4f);
         Instantiate(Explosion, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
