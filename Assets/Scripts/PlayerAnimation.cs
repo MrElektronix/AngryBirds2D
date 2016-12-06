@@ -10,6 +10,8 @@ public class PlayerAnimation : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     bool Expl = false;
+    [SerializeField]
+    GameObject Explosion;
 
     Animator anim;
 
@@ -27,9 +29,11 @@ public class PlayerAnimation : MonoBehaviour {
         if (other.collider.tag == "Damager")
         {
             anim.SetTrigger("Explode");
-            Destroy(gameObject, 0.8f);
+            StartCoroutine(Wait());
+
         }
     }
+
 
     void FixedUpdate()
     {
@@ -40,5 +44,10 @@ public class PlayerAnimation : MonoBehaviour {
             anim.SetTrigger("inAir");
         }
     }
-
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.4f);
+        Instantiate(Explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
 }
