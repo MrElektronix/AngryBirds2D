@@ -23,6 +23,7 @@ public class MouseHandler : MonoBehaviour {
     [SerializeField]
     private Sprite sprite2;
     private float coolDown = 2, coolDownTime;
+    public bool ActivateTrail = false;
 
 
     void Start()
@@ -52,6 +53,7 @@ public class MouseHandler : MonoBehaviour {
                 Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
                 rb.isKinematic = false;
                 rb.AddForce(-dir * power);
+                ActivateTrail = true;
                 target = null;
             }
         }
