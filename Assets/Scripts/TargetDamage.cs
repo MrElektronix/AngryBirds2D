@@ -43,6 +43,6 @@ public class TargetDamage : MonoBehaviour {
     void Kill()
     {
         anim.SetTrigger("Dead");
-        Destroy(gameObject, 0.  4f); 
+        Destroy(gameObject, 0.4f); 
     }
 }
