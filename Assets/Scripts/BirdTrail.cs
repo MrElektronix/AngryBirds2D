@@ -5,6 +5,7 @@ public class BirdTrail : MonoBehaviour
 {
     private MouseHandler mHand;
     private int counter;
+    private bool collide;
     [SerializeField]
     private GameObject smoke;
     [SerializeField]
@@ -12,19 +13,28 @@ public class BirdTrail : MonoBehaviour
     [SerializeField]
     private GameObject biggestSmoke;
 
+
 	void Start ()
     {
-        Time.timeScale = 0.5f;
+        
         counter = 0;
         mHand = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseHandler>();
         StartCoroutine(Trail());
 	}
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "Damager")
+        {
+            collide = true;
+        }
+    }
+
     private IEnumerator Trail()
     {
-        yield return new WaitForSeconds(0.04f);
+        yield return new WaitForSeconds(0.035f);
 
-        if (mHand.ActivateTrail)
+        if (mHand.ActivateTrail && collide == false)
         {
             
             Instantiate(smoke, transform.position, Quaternion.identity);
