@@ -34,7 +34,7 @@ public class MouseHandler : MonoBehaviour {
         LR_1 = GameObject.Find("LR_1");
         LR_2 = GameObject.Find("LR_2");
         leftSide = GameObject.Find("leftSide");
-        lineRenderer.sortingOrder = 4;
+        lineRenderer.sortingOrder = 8000;
         lineRenderer2.sortingOrder = 1;
         //StartCoroutine(WaitAndPrint());
     }
