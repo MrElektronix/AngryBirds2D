@@ -16,7 +16,6 @@ public class BirdTrail : MonoBehaviour
 
 	void Start ()
     {
-        
         counter = 0;
         mHand = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseHandler>();
         StartCoroutine(Trail());
