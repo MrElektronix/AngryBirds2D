@@ -3,8 +3,9 @@ using System.Collections;
 
 public class MouseHandler : MonoBehaviour {
 
+    public RaycastHit2D hit;
     private SpriteRenderer spriteRenderer;
-    private bool hasTarget;
+    public bool hasTarget;
     [SerializeField]
     private Transform target;
     private GameObject slingShot;
@@ -60,7 +61,7 @@ public class MouseHandler : MonoBehaviour {
         if (Input.GetMouseButton(0))
         {
 
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
             if (hit.collider != null)
             {
@@ -84,7 +85,7 @@ public class MouseHandler : MonoBehaviour {
             lineRenderer.SetPosition(0, LR_1.transform.position);
             lineRenderer2.SetPosition(1, leftSide.transform.position);
             lineRenderer2.SetPosition(0, LR_2.transform.position);
-            Debug.Log(leftSide.transform.position);
+           // Debug.Log(leftSide.transform.position);
             //spriteRenderer.sprite = sprite1;
            /* if(coolDownTime < Time.time)
             {
