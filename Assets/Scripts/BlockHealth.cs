@@ -5,7 +5,7 @@ public class BlockHealth : MonoBehaviour {
     private float health;
 
     [SerializeField]
-    private Sprite lightyDamagedSprite, mediumDamagedSprite;
+    private Sprite[] sprites;
 
     private SpriteRenderer _renderer;
 
@@ -16,16 +16,17 @@ public class BlockHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+
+        _renderer.sprite = sprites[Mathf.CeilToInt(health - 1)];
+    }
 
     void AddDamage(float damage)
     {
         health -= damage;
-        if (health <= 20)
+
+        if(health <= 0)
         {
-            _renderer.sprite = lightyDamagedSprite;
+            gameObject.SetActive(false);
         }
-       
     }
 }
