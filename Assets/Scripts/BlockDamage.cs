@@ -7,11 +7,15 @@ public class BlockDamage : MonoBehaviour
     private LayerMask layerToIgnore;
 
     [SerializeField]
-    private float radius;
+    private float radius, maxDamage, minDamage, damageStep;
+
+    
 
     void Start()
     {
+        damageStep = maxDamage / radius;
         DamageBlocks();
+
     }
 
     void DamageBlocks()
@@ -21,8 +25,9 @@ public class BlockDamage : MonoBehaviour
         {
             Debug.Log(blocks[i].gameObject);
             float dmg = radius - Vector3.Distance(transform.position, blocks[i].transform.position);
-            dmg = Mathf.Clamp(dmg, 0, Mathf.Infinity);
-            blocks[i].gameObject.SendMessage("AddDamage", dmg);
+            dmg = Mathf.Clamp(dmg, minDamage, Mathf.Infinity);
+            blocks[i].gameObject.SendMessage("AddDamage", dmg * damageStep);
+            Debug.Log(dmg * damageStep);
         }
     }
 
