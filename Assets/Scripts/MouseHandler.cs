@@ -84,7 +84,6 @@ public class MouseHandler : MonoBehaviour {
             lineRenderer.SetPosition(0, LR_1.transform.position);
             lineRenderer2.SetPosition(1, leftSide.transform.position);
             lineRenderer2.SetPosition(0, LR_2.transform.position);
-            Debug.Log(leftSide.transform.position);
             //spriteRenderer.sprite = sprite1;
            /* if(coolDownTime < Time.time)
             {

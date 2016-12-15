@@ -1,23 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BlockDamage : MonoBehaviour
-{
+public class WhiteBird : MonoBehaviour {
+
     [SerializeField]
     private LayerMask layerToIgnore;
 
     [SerializeField]
     private float radius, maxDamage, minDamage, damageStep;
 
-    
     void OnCollisionEnter2D(Collision2D other)
-    { 
-        if(other.collider.tag == "Damager")
+    {
+        if (other.collider.tag == "Damager")
         {
-                damageStep = maxDamage / radius;
-                Invoke("DamageBlocks", 0.6f);   
+            damageStep = maxDamage / radius;
+            DamageBlocks();
         }
     }
+
 
     void DamageBlocks()
     {
