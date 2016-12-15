@@ -26,7 +26,7 @@ public class PlayerAnimation : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.tag == "Damager")
+        if (other.collider.tag == "DamagerWood" || other.collider.tag == "DamagerStone")
         {
             anim.SetTrigger("Explode");
             StartCoroutine(Wait());

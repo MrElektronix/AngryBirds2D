@@ -7,21 +7,12 @@ public class ImagePoints : MonoBehaviour {
     //public Sprite[] imageNumbers;
     [SerializeField]
     private Sprite[] imageNumbers;
+
     [SerializeField]
     private int[] Numbers;
 
     [SerializeField]
-    private Image onesImage;
-
-    [SerializeField]
-    private Image tensImage;
-
-    [SerializeField]
-    private Image hunderdsImage;
-
-    [SerializeField]
-    private Image thousandImage;
-
+    private Image onesImage, tensImage, hunderdsImage, thousandImage;
     private int oneString;
 
 
