@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class ImagePoints : MonoBehaviour {
@@ -16,7 +14,10 @@ public class ImagePoints : MonoBehaviour {
     private int oneString;
 
     private int Score;
+    //public static ImagePoints instance;
 
+    [SerializeField]
+    private Text PointText;
 
     // Use this for initialization
     void Start () {
@@ -24,15 +25,17 @@ public class ImagePoints : MonoBehaviour {
         hunderdsImage.gameObject.SetActive(false);
         thousandImage.gameObject.SetActive(false);
         tenthousandImage.gameObject.SetActive(false);
+        hunderdthousandImage.gameObject.SetActive(false);
         SetPoint(50);
-        SetPoint(50);
+        SetPoint(2000);
     }
 
-    void SetPoint(int pointAmount)
+    public void SetPoint(int pointAmount)
     {
         Score += pointAmount;
-        Debug.Log(Score);
+        //Debug.Log(Score);
         string newstring = Score.ToString();
+        PointText.text = pointAmount.ToString();
 
         int one = (int)char.GetNumericValue(newstring[newstring.Length - 1]);
         onesImage.sprite = imageNumbers[one];
