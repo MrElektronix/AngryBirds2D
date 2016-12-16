@@ -11,7 +11,7 @@ public class WhiteBird : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.tag == "Damager")
+        if (other.collider.tag == "DamagerWood" || other.collider.tag == "DamagerStone")
         {
             damageStep = maxDamage / radius;
             DamageBlocks();

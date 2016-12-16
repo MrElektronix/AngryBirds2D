@@ -12,10 +12,10 @@ public class BlockDamage : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D other)
     { 
-        if(other.collider.tag == "Damager")
+        if(other.collider.tag == "DamagerWood" || other.collider.tag == "DamagerStone")
         {
                 damageStep = maxDamage / radius;
-                Invoke("DamageBlocks", 0.6f);   
+                Invoke("DamageBlocks", 0.57f);   
         }
     }
 

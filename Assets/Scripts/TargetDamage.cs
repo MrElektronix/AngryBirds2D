@@ -21,9 +21,9 @@ public class TargetDamage : MonoBehaviour {
         //damageImpactSpeedSqr = damageImpactSpeed * damageImpactSpeed;
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.collider.tag != "Damager")
+        if (other.collider.tag == "DamagerWood" || other.collider.tag == "DamagerStone")
         {
             return;
         }

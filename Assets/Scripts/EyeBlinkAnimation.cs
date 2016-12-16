@@ -5,7 +5,7 @@ public class EyeBlinkAnimation : MonoBehaviour {
 
     private SpriteRenderer spriteRenderer;
     [SerializeField]
-    private Sprite sprite1;
+    private Sprite sprite1; 
     [SerializeField]
     private Sprite sprite2;
 
