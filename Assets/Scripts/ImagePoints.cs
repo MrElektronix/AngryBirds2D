@@ -12,56 +12,68 @@ public class ImagePoints : MonoBehaviour {
     private int[] Numbers;
 
     [SerializeField]
-    private Image onesImage, tensImage, hunderdsImage, thousandImage;
+    private Image onesImage, tensImage, hunderdsImage, thousandImage, tenthousandImage, hunderdthousandImage;
     private int oneString;
+
+    private int Score;
 
 
     // Use this for initialization
     void Start () {
-        tensImage.enabled = false;
-        hunderdsImage.enabled = false;
-        thousandImage.enabled = false;
-        SetPoint(45);
+        tensImage.gameObject.SetActive(false);
+        hunderdsImage.gameObject.SetActive(false);
+        thousandImage.gameObject.SetActive(false);
+        tenthousandImage.gameObject.SetActive(false);
+        SetPoint(50);
+        SetPoint(50);
     }
 
     void SetPoint(int pointAmount)
     {
-        int currentPoints = pointAmount;
-        currentPoints += pointAmount;
-        Debug.Log(currentPoints);
-        string newstring = currentPoints.ToString();
+        Score += pointAmount;
+        Debug.Log(Score);
+        string newstring = Score.ToString();
 
         int one = (int)char.GetNumericValue(newstring[newstring.Length - 1]);
         onesImage.sprite = imageNumbers[one];
         
         
-        if (currentPoints >= 10 && currentPoints < 100)
+        if (Score >= 10)
         {
-            tensImage.enabled = true;
             int two = (int)char.GetNumericValue(newstring[newstring.Length - 2]);
             tensImage.sprite = imageNumbers[two];
+            tensImage.gameObject.SetActive(true);
         }
 
-        if (currentPoints >= 100 && currentPoints < 1000)
+        if (Score >= 100)
         {
-            hunderdsImage.enabled = true;
             int three = (int)char.GetNumericValue(newstring[newstring.Length - 3]);
             hunderdsImage.sprite = imageNumbers[three];
+            tensImage.gameObject.SetActive(true);
+            hunderdsImage.gameObject.SetActive(true);
         }
         
-        if (currentPoints >= 1000 && currentPoints < 10000)
+        if (Score >= 1000)
         {
-            thousandImage.enabled = true;
             int four = (int)char.GetNumericValue(newstring[newstring.Length - 4]);
             thousandImage.sprite = imageNumbers[four];
+            tensImage.gameObject.SetActive(true);
+            hunderdsImage.gameObject.SetActive(true);
+            thousandImage.gameObject.SetActive(true);
+        }
+        if (Score >= 10000)
+        {   
+            int five = (int)char.GetNumericValue(newstring[newstring.Length - 5]);
+            tenthousandImage.sprite = imageNumbers[five];
+            tensImage.gameObject.SetActive(true);
+            hunderdsImage.gameObject.SetActive(true);
+            thousandImage.gameObject.SetActive(true);
+            tenthousandImage.gameObject.SetActive(true);
         }
     }
-
-
-
 	
 	// Update is called once per frame
 	void Update () {
-
+ 
     }
 }
