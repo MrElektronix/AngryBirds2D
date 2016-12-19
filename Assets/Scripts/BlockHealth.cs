@@ -34,6 +34,18 @@ public class BlockHealth : MonoBehaviour {
         {
             gameObject.SetActive(false);
             pointScript.GetComponent<ImagePoints>().SetPoint(500);
+            if (gameObject.tag == "DamagerWood")
+            {
+                ParticleSystem p = Instantiate(Resources.Load<ParticleSystem>("Explosion1"));
+                p.transform.position = transform.position;
+                p.Play();
+            }
+            if (gameObject.tag == "DamagerStone")
+            {
+                ParticleSystem p = Instantiate(Resources.Load<ParticleSystem>("Explosion2"));
+                p.transform.position = transform.position;
+                p.Play();
+            }
         }
     }
 }

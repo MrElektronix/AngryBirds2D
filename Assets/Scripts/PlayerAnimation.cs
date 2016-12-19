@@ -30,7 +30,9 @@ public class PlayerAnimation : MonoBehaviour {
         {
             anim.SetTrigger("Explode");
             StartCoroutine(Wait());
-
+            ParticleSystem p = Instantiate(Resources.Load<ParticleSystem>("Feather"));
+            p.transform.position = transform.position;
+            p.Play();
         }
     }
 
