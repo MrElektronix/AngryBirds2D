@@ -26,8 +26,6 @@ public class ImagePoints : MonoBehaviour {
         thousandImage.gameObject.SetActive(false);
         tenthousandImage.gameObject.SetActive(false);
         hunderdthousandImage.gameObject.SetActive(false);
-        SetPoint(50);
-        SetPoint(2000);
     }
 
     public void SetPoint(int pointAmount)
@@ -74,9 +72,5 @@ public class ImagePoints : MonoBehaviour {
             tenthousandImage.gameObject.SetActive(true);
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
- 
-    }
+
 }
