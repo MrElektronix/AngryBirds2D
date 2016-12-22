@@ -9,6 +9,11 @@ public class WhiteBird : MonoBehaviour {
     [SerializeField]
     private float radius, maxDamage, minDamage, damageStep;
 
+    void Start() {
+        Destroy(this.gameObject, 2.6f);
+
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.tag == "DamagerWood" || other.collider.tag == "DamagerStone")

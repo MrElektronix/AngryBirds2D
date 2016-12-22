@@ -22,7 +22,6 @@ public class BlockHealth : MonoBehaviour {
 	void Update () {
 
         _renderer.sprite = sprites[Mathf.CeilToInt(health - 1)];
-                
     }
 
 
