@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 
 public class ImagePoints : MonoBehaviour {
-    private Score scoreClass;
 
     [SerializeField]
     private Sprite[] spriteNumbers;
@@ -11,7 +10,6 @@ public class ImagePoints : MonoBehaviour {
     private Image[] spritePositionImages;
 
     void Start () {
-        scoreClass = GetComponent<Score>();
         SetImageActivity(-1, spritePositionImages.Length - 1, false);
     }
 
