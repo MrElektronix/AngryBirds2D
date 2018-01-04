@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EyeBlinkAnimation : MonoBehaviour {
-
+    
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private Sprite sprite1; 

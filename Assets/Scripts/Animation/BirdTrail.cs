@@ -34,7 +34,7 @@ public class BirdTrail : MonoBehaviour
     {
         yield return new WaitForSeconds(0.035f);
 
-        if (mHand.ActivateTrail && collide == false)
+        if (mHand.ActivateTrail && !collide)
         {
             
             Instantiate(smoke, transform.position, Quaternion.identity);

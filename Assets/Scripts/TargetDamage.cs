@@ -3,11 +3,11 @@ using System.Collections;
 
 public class TargetDamage : MonoBehaviour {
 
-    Animator anim;
+    private Animator anim;
 
-    public int hitPoints = 2;
+    private int health = 2;
     public Sprite damagedSprite;
-    public float damageImpactSpeed;
+    private float damageImpactSpeed;
 
     private int currentHitPoints;
     //private float damageImpactSpeedSqr;
@@ -16,9 +16,7 @@ public class TargetDamage : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        currentHitPoints = hitPoints;
         anim = GetComponent<Animator>();
-        //damageImpactSpeedSqr = damageImpactSpeed * damageImpactSpeed;
 	}
 
     void OnCollisionEnter2D(Collision2D other)
@@ -28,12 +26,9 @@ public class TargetDamage : MonoBehaviour {
             return;
         }
             
-            
-        //spriteRenderer.sprite = damagedSprite;
-        currentHitPoints -= 2;
-        //Debug.Log("currentHitPoints: " + currentHitPoints);
+        health -= 2;
 
-        if (currentHitPoints <= 0)
+        if (health <= 0)
         {
             Kill();
         }
@@ -43,6 +38,6 @@ public class TargetDamage : MonoBehaviour {
     void Kill()
     {
         anim.SetTrigger("Dead");
-        Destroy(gameObject, 0.4f); 
+        Destroy(gameObject, 0.4f);
     }
 }

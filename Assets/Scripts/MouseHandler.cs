@@ -36,7 +36,6 @@ public class MouseHandler : MonoBehaviour {
         leftSide = GameObject.Find("leftSide");
         lineRenderer.sortingOrder = 8000;
         lineRenderer2.sortingOrder = 1;
-        //StartCoroutine(WaitAndPrint());
     }
 
     void Update() {
@@ -47,8 +46,6 @@ public class MouseHandler : MonoBehaviour {
                 hasTarget = false;
                 Vector3 dir;
                 dir = target.position - slingShot.transform.position;
-                //dir = -dir.normalized;
-                //Debug.Log(dir);
 
                 Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
                 rb.isKinematic = false;
@@ -76,7 +73,7 @@ public class MouseHandler : MonoBehaviour {
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pos.z = 0;
-            //if (Vector3.Distance(slingShot.transform.position, pos) > range) return;
+
             Vector3 offset = pos - slingShot.transform.position;
             pos = slingShot.transform.position + Vector3.ClampMagnitude(offset, range);
             target.position = pos;
@@ -84,14 +81,6 @@ public class MouseHandler : MonoBehaviour {
             lineRenderer.SetPosition(0, LR_1.transform.position);
             lineRenderer2.SetPosition(1, leftSide.transform.position);
             lineRenderer2.SetPosition(0, LR_2.transform.position);
-            //spriteRenderer.sprite = sprite1;
-           /* if(coolDownTime < Time.time)
-            {
-                coolDown = Time.time + coolDownTime;
-                spriteRenderer.sprite = sprite2;
-                Debug.Log("skuuuurt");
-            }*/
-
         }
         else
         {
@@ -111,19 +100,6 @@ public class MouseHandler : MonoBehaviour {
             }
         }
     }
-
-  /*  private IEnumerator WaitAndPrint()
-    {
-        while (true)
-        {
-            Debug.Log(spriteRenderer);
-            spriteRenderer.sprite = sprite1;
-            
-            yield return new WaitForSeconds(3.0f);
-            spriteRenderer.sprite = sprite2;
-            yield return new WaitForSeconds(0.2f);
-        }
-    }*/
 
     void OnDrawGizmos()
     {

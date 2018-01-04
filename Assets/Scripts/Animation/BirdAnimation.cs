@@ -1,15 +1,17 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour {
+public class BirdAnimation : MonoBehaviour {
 
-    Vector3 previous;
+    private Vector3 previous;
+
     [SerializeField]
-    float velocity;
+    private float velocity;
+
     [SerializeField]
     private SpriteRenderer spriteRenderer;
-    [SerializeField]
-    bool Expl = false;
+
     [SerializeField]
     GameObject Explosion;
 
@@ -22,7 +24,7 @@ public class PlayerAnimation : MonoBehaviour {
         previous = transform.position;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-   
+
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -41,7 +43,7 @@ public class PlayerAnimation : MonoBehaviour {
     {
         velocity = (transform.position - previous).magnitude / Time.deltaTime;
         previous = transform.position;
-        if(velocity > 10)
+        if (velocity > 10)
         {
             anim.SetTrigger("inAir");
         }

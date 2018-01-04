@@ -11,7 +11,6 @@ public class WhiteBird : MonoBehaviour {
 
     void Start() {
         Destroy(this.gameObject, 2.6f);
-
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -29,16 +28,9 @@ public class WhiteBird : MonoBehaviour {
         Collider2D[] blocks = Physics2D.OverlapCircleAll(transform.position, radius, layerToIgnore);
         for (int i = 0; i < blocks.Length; i++)
         {
-            //Debug.Log(blocks[i].gameObject);
             float dmg = radius - Vector3.Distance(transform.position, blocks[i].transform.position);
             dmg = Mathf.Clamp(dmg, minDamage, Mathf.Infinity);
             blocks[i].gameObject.SendMessage("AddDamage", dmg * damageStep);
-            //Debug.Log(dmg * damageStep);
         }
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
