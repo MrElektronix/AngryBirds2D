@@ -37,6 +37,7 @@ public class ImagePoints : MonoBehaviour {
         {
             ImageNumber(4, pointString);
         }
+
         if (pointAmount >= 10000)
         {
             ImageNumber(5, pointString);
